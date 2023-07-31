@@ -25,9 +25,9 @@ jobs:
       -
         name: Tidy
         run: |
-          go mod init github.com/zeyac/gore
+          #go mod init github.com/zeyac/gore
           #go mod init github.com/zeyac/brow
-          #go mod tidy
+          go mod tidy
       -
         name: Set up Git
         run: |
