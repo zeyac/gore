@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+name: tag
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps: 
+      - 
+        name: Tag
+        run: |
+          RELEASE_LATEST="$(curl -IkLs -o /tmp/NUL -w %{url_effective} https://github.com/brave/brave-browser/releases/latest | grep -o "[^/]*$")"
+          echo "GIT_TAGNAME=v${RELEASE_LATEST#v}"
