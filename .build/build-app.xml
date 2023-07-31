@@ -98,12 +98,12 @@
     <if>
       <not><equals arg1="${atf.win3264.url}" arg2=""/></not>
       <then>
-        <property name="release.7z.filename" value="${papp.id}-${app.version}-${app.release}.7z"/>
-        <property name="release.setup.filename" value="${papp.id}-${app.version}-${app.release}-setup"/>
+        <property name="release.7z.filename" value="${papp.id}-${app.version}.7z"/>
+        <property name="release.setup.filename" value="${papp.id}-${app.version}-setup"/>
       </then>
       <else>
-        <property name="release.7z.filename" value="${papp.id}-${atf.arch}-${app.version}-${app.release}.7z"/>
-        <property name="release.setup.filename" value="${papp.id}-${atf.arch}-${app.version}-${app.release}-setup"/>
+        <property name="release.7z.filename" value="${papp.id}-${atf.arch}-${app.version}.7z"/>
+        <property name="release.setup.filename" value="${papp.id}-${atf.arch}-${app.version}-setup"/>
       </else>
     </if>
 
@@ -147,7 +147,7 @@
             <filter token="APP_HOMEPAGE" value="${app.homepage}"/>
             <filter token="PAPP_ID" value="${papp.id}"/>
             <filter token="PAPP_GUID" value="${papp.guid}"/>
-            <filter token="PAPP_VERSION" value="${app.version}-${app.release}"/>
+            <filter token="PAPP_VERSION" value="${app.version}"/>
             <filter token="PAPP_URL" value="${papp.url}"/>
             <filter token="PAPP_FOLDER" value="${papp.folder}"/>
             <filter token="PAPP_PUBLISHER" value="${publisher}"/>
@@ -168,7 +168,7 @@
         <filter token="APP_HOMEPAGE" value="${app.homepage}"/>
         <filter token="PAPP_ID" value="${papp.id}"/>
         <filter token="PAPP_GUID" value="${papp.guid}"/>
-        <filter token="PAPP_VERSION" value="${app.version}-${app.release}"/>
+        <filter token="PAPP_VERSION" value="${app.version}"/>
         <filter token="PAPP_URL" value="${papp.url}"/>
         <filter token="PAPP_FOLDER" value="${papp.folder}"/>
         <filter token="PAPP_PUBLISHER" value="${publisher}"/>

@@ -42,9 +42,9 @@
       </else>
     </if>
 
-    <!-- Add portapp README / CHANGELOG -->
+    <!-- Add portapp README / CHANGELOG 
     <copy file="${app.basedir}\README.md" todir="${build.path}" overwrite="true"/>
-    <copy file="${app.basedir}\CHANGELOG.md" todir="${build.path}" overwrite="true"/>
+    <copy file="${app.basedir}\CHANGELOG.md" todir="${build.path}" overwrite="true"/> -->
 
     <!-- Copy portable executable -->
     <copy todir="${build.path}" overwrite="true">
