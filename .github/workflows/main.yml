@@ -1,0 +1,27 @@
+name: clone
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up Git
+        run: |
+          git clone https://github.com/portapps/portapps.git tmp 
+          mv tmp/.build .
+          rm -rf tmp
+          git config user.name GitHub
+          git config user.email noreply@github.com
+          git remote set-url origin https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git
+      -
+        name: Commit and push changes
+        run: |
+          git add .
+          git commit --author "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" --allow-empty -m "$(git log -1 --pretty=%s)"
+          git push
